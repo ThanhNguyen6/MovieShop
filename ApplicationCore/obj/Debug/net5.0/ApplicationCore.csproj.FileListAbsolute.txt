@@ -1,0 +1,15 @@
+C:\Users\cream\Desktop\SQL\MovieShop\ApplicationCore\bin\Debug\net5.0\ApplicationCore.deps.json
+C:\Users\cream\Desktop\SQL\MovieShop\ApplicationCore\bin\Debug\net5.0\ApplicationCore.dll
+C:\Users\cream\Desktop\SQL\MovieShop\ApplicationCore\bin\Debug\net5.0\ref\ApplicationCore.dll
+C:\Users\cream\Desktop\SQL\MovieShop\ApplicationCore\bin\Debug\net5.0\ApplicationCore.pdb
+C:\Users\cream\Desktop\SQL\MovieShop\ApplicationCore\obj\Debug\net5.0\ApplicationCore.csprojAssemblyReference.cache
+C:\Users\cream\Desktop\SQL\MovieShop\ApplicationCore\obj\Debug\net5.0\ApplicationCore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cream\Desktop\SQL\MovieShop\ApplicationCore\obj\Debug\net5.0\ApplicationCore.AssemblyInfoInputs.cache
+C:\Users\cream\Desktop\SQL\MovieShop\ApplicationCore\obj\Debug\net5.0\ApplicationCore.AssemblyInfo.cs
+C:\Users\cream\Desktop\SQL\MovieShop\ApplicationCore\obj\Debug\net5.0\ApplicationCore.csproj.CoreCompileInputs.cache
+C:\Users\cream\Desktop\SQL\MovieShop\ApplicationCore\obj\Debug\net5.0\ApplicationCore.dll
+C:\Users\cream\Desktop\SQL\MovieShop\ApplicationCore\obj\Debug\net5.0\ref\ApplicationCore.dll
+C:\Users\cream\Desktop\SQL\MovieShop\ApplicationCore\obj\Debug\net5.0\ApplicationCore.pdb
+C:\Users\cream\Desktop\SQL\MovieShop\ApplicationCore\bin\Debug\net5.0\ApplicationCore.runtimeconfig.json
+C:\Users\cream\Desktop\SQL\MovieShop\ApplicationCore\bin\Debug\net5.0\ApplicationCore.runtimeconfig.dev.json
+C:\Users\cream\Desktop\SQL\MovieShop\ApplicationCore\obj\Debug\net5.0\ApplicationCore.genruntimeconfig.cache
