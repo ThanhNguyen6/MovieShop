@@ -10,7 +10,8 @@ namespace ApplicationCore.Entities
     {
         public int Id { get; set; }
         public int MovieId { get; set; }
-        public int TrailerId { get; set; }
+        public Movie Movie { get; set; }
+        public int? TrailerUrl { get; set; }
         public string Name { get; set; }
     }
 }
