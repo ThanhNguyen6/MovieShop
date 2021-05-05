@@ -187,8 +187,8 @@ namespace Infrastructure.Data
             builder.Property(m => m.HashedPassword).HasMaxLength(1024);
             builder.Property(m => m.Salt).HasMaxLength(1024);
             builder.Property(m => m.PhoneNumber).HasMaxLength(16);
-            builder.Property(m => m.TwoFactorEnable).HasColumnType("bit");
-            builder.Property(m => m.LockoutDateTime).HasColumnType("datetime2");
+            builder.Property(m => m.TwoFactorEnabled).HasColumnType("bit");
+            builder.Property(m => m.LockoutEndDate).HasColumnType("datetime2");
             builder.Property(m => m.LastLoginDateTime).HasColumnType("datetime2");
             builder.Property(m => m.IsLocked).HasColumnType("bit");
             builder.Property(m => m.AccessFailedCount).HasColumnType("int");
