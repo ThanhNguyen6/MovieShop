@@ -17,10 +17,6 @@ namespace Infrastructure.Repositories
 
         }
 
-        public async Task<IEnumerable<Genre>> GetAllGenre()
-        {
-            //error
-            return (await _dbContext.Genres.Select(g => g.Name)).OrderBy(g => g.Name);
-        }
+        
     }
 }

@@ -30,7 +30,8 @@ namespace Infrastructure.Services
                 {
                     Id = movie.Id,
                     Budget = (decimal)movie.Budget,
-                    Title = movie.Title
+                    Title = movie.Title,
+                    PosterUrl = movie.PosterUrl
                 });
             }
 
@@ -71,7 +72,8 @@ namespace Infrastructure.Services
                 {
                     Id = movie.Id,
                     Budget = (decimal)movie.Budget,
-                    Title = movie.Title
+                    Title = movie.Title,
+                    PosterUrl = movie.PosterUrl
                 });
             }
 
@@ -100,12 +102,46 @@ namespace Infrastructure.Services
         {
             var movie = await _movieRepository.GetMovieById(id);
             if (movie == null) throw new NotFoundException("Movie", id);
+            var Casts = new List<CastResponseModel>();
+            foreach (var movieCast in movie.MovieCasts)
+            {
+
+                Casts.Add(new CastResponseModel { 
+                    Name = movieCast.Cast.Name,
+                    Gender = movieCast.Cast.Gender,
+                    Character = movieCast.Character,
+                    TmdbUrl = movieCast.Cast.TmdbUrl,
+                    ProfilePath = movieCast.Cast.ProfilePath
+                });
+            }
+
+            var Genres = new List<GenreResponseModel>();
+            foreach (var genre in movie.MovieGenres)
+            {
+
+                Genres.Add(new GenreResponseModel
+                {
+                    Id = genre.GenreId,
+                    Name = genre.Genre.Name
+
+                });
+            }
             return new MovieDetailsResponseModel
             {
                 Id = movie.Id,
                 Budget = (decimal)movie.Budget,
-                Title = movie.Title
+                Title = movie.Title,
+                RunTime = movie.RunTime,
+                ReleaseDate = movie.ReleaseDate,
+                Overview = movie.Overview,
+                Price = movie.Price,
+                Revenue = movie.Revenue,
+                PosterUrl = movie.PosterUrl,
+                BackdropUrl = movie.BackdropUrl,
+                Genres = Genres,
                 //how to casts and reviews?
+                Casts = Casts,
+                Rating = movie.Rating
             };
         }
     }

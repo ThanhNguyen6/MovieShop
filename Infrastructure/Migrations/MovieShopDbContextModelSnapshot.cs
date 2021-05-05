@@ -199,7 +199,7 @@ namespace Infrastructure.Migrations
 
                     b.HasIndex("CastId");
 
-                    b.ToTable("MovieCasts");
+                    b.ToTable("MovieCast");
                 });
 
             modelBuilder.Entity("ApplicationCore.Entities.MovieCrew", b =>
@@ -220,7 +220,7 @@ namespace Infrastructure.Migrations
 
                     b.HasIndex("CrewId");
 
-                    b.ToTable("MovieCrews");
+                    b.ToTable("MovieCrew");
                 });
 
             modelBuilder.Entity("ApplicationCore.Entities.MovieGenre", b =>
@@ -235,7 +235,7 @@ namespace Infrastructure.Migrations
 
                     b.HasIndex("MovieId");
 
-                    b.ToTable("MovieGenres");
+                    b.ToTable("MovieGenre");
                 });
 
             modelBuilder.Entity("ApplicationCore.Entities.Purchase", b =>

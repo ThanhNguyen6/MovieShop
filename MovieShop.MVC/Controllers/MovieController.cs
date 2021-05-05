@@ -16,16 +16,30 @@ namespace MovieShop.MVC.Controllers
             _movieService = movieService;
         }
 
-        public async Task<IActionResult> Genre(int id)
+        public async Task<IActionResult> GetMoviesByGenre(int id)
         {
             var movies = await _movieService.GetMoviesByGenre(id);
-            return View(movies);
+            return View("~/Views/Home/Index.cshtml", movies);
         }
 
         public async Task<IActionResult> TopRatedMovie()
         {
             var movies = await _movieService.GetTopRatedMovies();
             return View(movies);
+        }
+
+
+
+        public async Task<IActionResult> Details(int id)
+        {
+            var movie = await _movieService.GetMovieById(id);
+            return View("~/Views/Movies/Index.cshtml", movie);
+        }
+
+        public async Task<IActionResult> Reviews(int id)
+        {
+            var movie = await _movieService.GetMovieReviews(id);
+            return View(movie);
         }
 
     }

@@ -27,7 +27,7 @@ namespace Infrastructure.Data
             modelBuilder.Entity<User>(ConfigureUser);
             modelBuilder.Entity<Role>(ConfigureRole);
             modelBuilder.Entity<Trailer>(ConfigureTrailer);
-            modelBuilder.Entity<MovieGenre>().HasKey(mg => new { mg.GenreId, mg.MovieId });
+            modelBuilder.Entity<MovieGenre>().ToTable("MovieGenre").HasKey(mg => new { mg.GenreId, mg.MovieId });
             modelBuilder.Entity<MovieGenre>()
                 .HasOne(mg => mg.Genre)
                 .WithMany(g => g.MovieGenres)
@@ -36,7 +36,7 @@ namespace Infrastructure.Data
                 .HasOne(mg => mg.Movie)
                 .WithMany(m => m.MovieGenres)
                 .HasForeignKey(mg => mg.MovieId);
-            modelBuilder.Entity<MovieCrew>().HasKey(mc => new { mc.MovieId, mc.CrewId, mc.Department, mc.Job});
+            modelBuilder.Entity<MovieCrew>().ToTable("MovieCrew").HasKey(mc => new { mc.MovieId, mc.CrewId, mc.Department, mc.Job});
             modelBuilder.Entity<MovieCrew>()
                 .HasOne(mc => mc.Crew)
                 .WithMany(c => c.MovieCrews)
@@ -45,7 +45,7 @@ namespace Infrastructure.Data
                 .HasOne(mc => mc.Movie)
                 .WithMany(m => m.MovieCrews)
                 .HasForeignKey(mc => mc.MovieId);
-            modelBuilder.Entity<MovieCast>().HasKey(mc => new { mc.MovieId, mc.CastId, mc.Character });
+            modelBuilder.Entity<MovieCast>().ToTable("MovieCast").HasKey(mc => new { mc.MovieId, mc.CastId, mc.Character });
             modelBuilder.Entity<MovieCast>()
                 .HasOne(mc => mc.Cast)
                 .WithMany(c => c.MovieCasts)

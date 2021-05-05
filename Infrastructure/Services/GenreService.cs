@@ -12,18 +12,26 @@ namespace Infrastructure.Services
 {
     public class GenreService : IGenreService
     {
-        private readonly IAsyncRepository<Genre> _genreRepository;
-        private static readonly string _genresKey = "genres";
+       // private readonly IAsyncRepository<Genre> _genreRepository;
+        private readonly IGenreRepository _genreRepository;
 
-        public GenreService(IAsyncRepository<Genre> genreRepository)
+
+        //public GenreService(IAsyncRepository<Genre> genreRepository)
+        public GenreService(IGenreRepository genreRepository)
         {
             _genreRepository = genreRepository;
         }
-
         public async Task<IEnumerable<GenreResponseModel>> GetAllGenres()
         {
-            return await _genreRepository.GetAllGenre();
-        }
+            var genres = await _genreRepository.ListAllAsync();
 
+            var genresList = new List<GenreResponseModel>();
+            foreach (var genre in genres)
+            {
+                genresList.Add(new GenreResponseModel { Id = genre.Id, Name = genre.Name });
+            }
+
+            return genresList;
+        }
     }
 }
